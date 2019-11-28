@@ -1,0 +1,13 @@
+name: DeathBan
+main: pl.extollite.DeathBan.DeathBan
+version: "1.0.0"
+api: ["1.0.9"]
+load: POSTWORLD
+authors: ["Extollite"]
+description: Ban people for certain amount of time after death
+prefix: "DeathBan"
+
+permissions:
+  deathban.noban:
+    description: "No ban after death"
+    default: op

@@ -1,0 +1,4 @@
+unbanAfter: 3600
+lightningOnDeath: false
+banReason: "banned until "
+showUnBanDate: true
