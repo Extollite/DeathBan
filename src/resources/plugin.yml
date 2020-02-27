@@ -1,6 +1,6 @@
 name: DeathBan
-main: pl.extollite.DeathBan.DeathBan
-version: "1.0.0"
+main: pl.extollite.deathban.DeathBan
+version: "${pom.version}"
 api: ["1.0.9"]
 load: POSTWORLD
 authors: ["Extollite"]

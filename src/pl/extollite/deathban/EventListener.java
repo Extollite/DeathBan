@@ -1,4 +1,4 @@
-package pl.extollite.DeathBan;
+package pl.extollite.deathban;
 
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
@@ -25,7 +25,11 @@ public class EventListener implements Listener {
         Player player = ev.getEntity();
         if (!player.hasPermission("deathban.noban")) {
             Date now = new Date(System.currentTimeMillis() + plugin.unBanAfter);
-            plugin.getServer().getNameBans().addBan(player.getName(),
+            if(plugin.nameBan)
+                plugin.getServer().getNameBans().addBan(player.getName(),
+                    plugin.banReason + (plugin.showUnBanDate ? new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").format(now) : "" ), now);
+            if(plugin.ipBan)
+                plugin.getServer().getIPBans().addBan(player.getAddress(),
                     plugin.banReason + (plugin.showUnBanDate ? new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").format(now) : "" ), now);
             if (plugin.lightningOnDeath) {
                 AddEntityPacket light = new AddEntityPacket();
